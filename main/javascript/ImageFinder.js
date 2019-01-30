@@ -4,11 +4,11 @@
   ImageFinder.prototype.search = function(query) {
     console.log(query);
     let db = window.DATA.staticImagesDb;
-    let obj = db.find(o => o.title === query);
-
+    let images = db.filter(image => image.title.includes(query));
+    console.log(images);
     return {
       query: query,
-      images: obj
+      images: images
     };
   };
 })();

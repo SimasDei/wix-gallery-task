@@ -23,8 +23,13 @@
    * Handle search button clicks
    */
   Gallery.prototype._onSearchButtonClick = function(e) {
+    // Search input value
     var query = this._queryInputNode.value;
-    this.doSearch(query);
+    // Get value from the select input, pass as moduleID
+    let moduleId = this._querySelectInputNode.value;
+    console.log(moduleId);
+    // Pass moduleId into search onClick listener
+    this.doSearch(query, moduleId);
   };
 
   /**
@@ -83,5 +88,19 @@
     this._searchBtnNode = document.createElement('button');
     this._searchBtnNode.innerHTML = 'search';
     this._controlsNode.appendChild(this._searchBtnNode);
+
+    // Add Select Element, target value to pass as moduleId
+    // Option One = Static, Option Two = Flickr
+    this._querySelectInputNode = document.createElement('select');
+    // Options
+    this._querySelectOptionNodeOne = document.createElement('option');
+    this._querySelectOptionNodeOne.innerHTML = 'static';
+    this._querySelectOptionNodeTwo = document.createElement('option');
+    this._querySelectOptionNodeTwo.innerHTML = 'flickr';
+    // Append to Gallery Controls
+    this._querySelectInputNode.appendChild(this._querySelectOptionNodeOne);
+    this._controlsNode.appendChild(this._querySelectInputNode);
+    this._querySelectInputNode.appendChild(this._querySelectOptionNodeTwo);
+    this._controlsNode.appendChild(this._querySelectInputNode);
   };
 })();

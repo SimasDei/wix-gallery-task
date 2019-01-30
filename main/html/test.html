@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wix javascript test</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <!-- Testing Facilities DO NOT REMOVE OR CHANGE THIS BLOCK -->
+    <link rel="stylesheet" href="../../testframework/css/testframework.css" />
+    <script src="../../testframework/javascript/jasmine.js"></script>
+    <script src="../../testframework/javascript/jasmine-test-reporter.js"></script>
+    <script src="../../testframework/javascript/TestManager.js"></script>
+    <!-- <script src="../../testframework/tests/test001.js"></script>
+  <script src="../../testframework/tests/test002.js"></script>
+  <script src="../../testframework/tests/test003.js"></script>
+  <script src="../../testframework/tests/test004.js"></script>
+  <script src="../../testframework/tests/test005.js"></script> -->
+
+    <!-- gallery style -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- setup -->
+    <script>
+      // Global maps for classes and static data
+      var CLASSES = {};
+      var DATA = {};
+    </script>
+
+    <script src="../resources/static-images-db.js"></script>
+    <script src="../javascript/ImageFinder.js"></script>
+    <script src="../javascript/Gallery.js"></script>
+
+    <script>
+      var GalleryClass = CLASSES['Gallery'];
+      var ImageFinderClass = CLASSES['ImageFinder'];
+
+      var imageFinder = new ImageFinderClass();
+
+      window.onload = function() {
+        var gallery = new GalleryClass(imageFinder);
+        gallery.addToNode(document.body);
+
+        initiateTest();
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

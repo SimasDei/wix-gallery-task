@@ -1,0 +1,76 @@
+html,body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding-left: 450px;
+}
+
+#test-panel {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 450px;
+    background-color: #b9dcff;
+    font-size: 15px;
+    overflow-y: scroll;
+    border-right: black solid 1px;
+}
+
+#test-panel .task {
+    padding-left: 10px;
+}
+#test-panel .task > .description.top {
+    padding: 10px 10px 0;
+    font-weight: normal;
+    font-size: 150%;
+    margin-top: 25px;
+    margin-right: 10px;
+}
+
+#test-panel .task > .description {
+    border-bottom: 1px solid black;
+    padding: 10px;
+    overflow: hidden;
+}
+
+#test-panel .task > .description.item {
+    background: #f0f8ff;
+    margin-right: 10px;
+    border-right:  1px solid black;
+}
+
+#test-panel .task > .description.failed {
+    border-left: 5px solid red;
+    border-bottom: 2px solid red;
+    overflow: auto;
+}
+
+#test-panel .task > .description.passed {
+    border-left: 5px solid green;
+    border-bottom: 2px solid green;
+}
+
+#test-panel .task > .description.passed.item  {
+    height: 60px;
+}
+
+#test-panel .task > .description.passed.item:hover  {
+    height: auto;
+    overflow: auto;
+}
+
+
+#test-panel .sub-task {
+    padding-left: 10px;
+    display: none;
+}
+#test-panel .sub-task.failed {
+    color: red;
+}
+#test-panel .sub-task.passed {
+    color: green;
+}

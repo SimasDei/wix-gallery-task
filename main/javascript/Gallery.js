@@ -13,9 +13,10 @@
    * start a new search
    * @param {String} query - search term to look for
    * @param {String} moduleId - specify which API to query
+   * Reformat into Async function to handle the API fetch Promise
    */
-  Gallery.prototype.doSearch = function(query, moduleId) {
-    var searchResults = this._imageFinder.search(query, moduleId);
+  Gallery.prototype.doSearch = async function(query, moduleId) {
+    var searchResults = await this._imageFinder.search(query, moduleId);
     this._onSearchResultReady(searchResults);
   };
 

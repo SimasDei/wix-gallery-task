@@ -1,11 +1,13 @@
 (function() {
   var ImageFinder = (window.CLASSES.ImageFinder = function() {});
 
-  ImageFinder.prototype.search = function(query, moduleId) {
+  // Turn into Asyncronous call in order to handle
+  // Api fetch Promise
+  ImageFinder.prototype.search = async (query, moduleId) => {
     if (moduleId === 'flickr') {
       return {
         query,
-        images: window.MODULES.flickr(query)
+        images: await window.MODULES.flickr(query)
       };
     } else if (moduleId === 'static') {
       return {

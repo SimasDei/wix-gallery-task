@@ -3,7 +3,10 @@
 
   ImageFinder.prototype.search = function(query, moduleId) {
     if (moduleId === 'flickr') {
-      return window.MODULES.flick();
+      return {
+        query,
+        images: window.MODULES.flickr(query)
+      };
     } else if (moduleId === 'static') {
       return {
         query: query,

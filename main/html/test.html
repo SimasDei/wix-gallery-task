@@ -28,18 +28,25 @@
       var MODULES = {};
     </script>
 
+    <!-- Static Db -->
     <script src="../resources/static-images-db.js"></script>
+    <!-- Image finder Method -->
     <script src="../javascript/ImageFinder.js"></script>
+    <!-- Static Image Search Module -->
     <script src="../javascript/static.js"></script>
+    <!-- Search Module using Flickr API -->
     <script src="../javascript/flickr.js"></script>
+    <!-- Main Higher Order Component -->
     <script src="../javascript/Gallery.js"></script>
 
     <script>
+      // Initiate Classes
       var GalleryClass = CLASSES['Gallery'];
       var ImageFinderClass = CLASSES['ImageFinder'];
 
       var imageFinder = new ImageFinderClass();
 
+      // Initiate hoc upon Page Load
       window.onload = function() {
         var gallery = new GalleryClass(imageFinder);
         gallery.addToNode(document.body);
